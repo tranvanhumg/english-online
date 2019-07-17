@@ -17,11 +17,16 @@ public class LoginWithGoogleEnterPasswordPage extends PageObject {
 	}
 
 	//hoi thay cach lay locator cua nut nay
-	@FindBy(xpath = "")
-	WebElementFacade show_hide_PasswordBt;
-
-	public void clickOnShow_Hide_PasswordBt() {
-		show_hide_PasswordBt.click();
+	@FindBy(xpath = "//span[@class='wRNPwe S7pdP']/svg[contains(@fill,'currentColor')]")
+	WebElementFacade showPasswordBt;
+	public void clickOnShowPasswordBt() {
+		showPasswordBt.click();
+	}
+	
+	@FindBy(xpath = "//span[@class='wRNPwe pVlEsd']/svg[contains(@fill,'currentColor')]")
+	WebElementFacade hidePasswordBt;
+	public void clickOnHidePasswordBt() {
+		hidePasswordBt.click();
 	}
 	
 	@FindBy(xpath = "//span[@class='RveJvd snByac'][contains(.,'Bạn quên mật khẩu?')]")
