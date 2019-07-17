@@ -8,18 +8,18 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("https://elight.edu.vn/tieng-anh-online/login")
 public class LoginPage extends PageObject {
 
-	@FindBy(className = "fa fa-facebook-square")
+	@FindBy(className = "center-block cursor-pointer social-fb")
 	WebElementFacade loginWithFaceBook;
 
 	public void clickOnloginWithFaceBook() {
-		loginWithFaceBook.click();
+		loginWithFaceBook.waitUntilClickable().click();
 	}
 
 	@FindBy(className = "center-block cursor-pointer social-gg")
 	WebElementFacade loginWithGoogle;
 
 	public void clickOnloginWithGoogle() {
-		loginWithGoogle.click();
+		loginWithGoogle.waitUntilClickable().click();
 	}
 
 	@FindBy(name = "email")
@@ -51,21 +51,21 @@ public class LoginPage extends PageObject {
 	WebElementFacade linkTextForgetPassword;
 
 	public void clickOnLinkForgetPassword() {
-		linkTextForgetPassword.click();
+		linkTextForgetPassword.waitUntilClickable().click();
 	}
 
 	@FindBy(xpath = "//button[@ng-click='signIn(data);'][contains(.,'ĐĂNG NHẬP')]")
 	WebElementFacade loginBt;
 
 	public void clickOnLoginBt() {
-		loginBt.click();
+		loginBt.waitUntilClickable().click();
 	}
 
 	@FindBy(xpath = "//a[@ng-click='goToCode()']")
 	WebElementFacade backCodeCoursePageBt;
 
 	public void clickOnbackCodeCoursePageBt() {
-		backCodeCoursePageBt.click();
+		backCodeCoursePageBt.waitUntilClickable().click();
 	}
 
 	// Email không được để trống
@@ -73,7 +73,7 @@ public class LoginPage extends PageObject {
 	WebElementFacade messageErrorEmptyEmail;
 
 	public String getMessageErrorEmptyEmail() {
-		return messageErrorEmptyEmail.getText();
+		return messageErrorEmptyEmail.waitUntilVisible().getText();
 	}
 
 	// Email không đúng định dạng
@@ -81,31 +81,25 @@ public class LoginPage extends PageObject {
 	WebElementFacade messageErrorTypeEmail;
 
 	public String getMessageErrorTypeEmail() {
-		return messageErrorTypeEmail.getText();
+		return messageErrorTypeEmail.waitUntilVisible().getText();
 	}
 
 	// Mật khẩu ít nhất 6 ký tự
-	@FindBy(xpath = "//div[@class='message-error'][contains(.,'Mật khẩu ít nhất 6 ký tự')]")
+	@FindBy(xpath = "//div[contains(@ng-show,'form_signIn.password.$viewValue.length')]/div")
 	WebElementFacade messageErrorLengthPassword;
 
 	public String getMessageErrorLengthPassword() {
-		return messageErrorLengthPassword.getText();
+		return messageErrorLengthPassword.waitUntilVisible().getText();
 	}
 
 	// Phải điền đầy đủ thông tin trước khi đăng nhập.
-	@FindBy(xpath = "//div[@class='message-error ng-binding ng-scope'][contains(.,'Phải điền đầy đủ thông tin trước khi đăng nhập.')]")
-	WebElementFacade messageErrorEmptyPassword;
+	//Đây là tài khoản Facebook của bạn. Vui lòng click đăng nhập bằng Facebook!    
+	@FindBy(xpath = "//div[@class='message-error ng-binding ng-scope']")
+	WebElementFacade messageErrorScopePassword;
 
-	public String getMessageErrorEmptyPassword() {
-		return messageErrorEmptyPassword.getText();
+	public String getMessageErrorScopePassword() {
+		return messageErrorScopePassword.waitUntilVisible().getText();
 	}
 
-	// Đây là tài khoản Facebook của bạn. Vui lòng click đăng nhập bằng Facebook!
-	// Đây là tài khoản Google của bạn.................
-	//	@FindBy(xpath = "//div[@class='message-error ng-binding ng-scope'][contains(.,'Đây là tài khoản Facebook của bạn. Vui lòng click đăng nhập bằng Facebook!')]")
-	//	WebElementFacade messageErrorIsAccountFaceBook;
-	//	public String getMessageErrorIsAccountFaceBook() {
-	//		return messageErrorIsAccountFaceBook.getText();
-	//	}
 
 }

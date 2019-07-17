@@ -18,35 +18,30 @@ public class CodeCoursePage extends PageObject {
 		input_code.clear();
 	}
 
-	@FindBy(xpath = "/html/body/div[3]/section/div/div/div/form/div[3]/a/span/button")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElementFacade Activebt;
 
 	public void clickOnActiveCodeButton() {
 		Activebt.click();
 	}
 
-	@FindBy(xpath = "/html/body/div[3]/section/div/div/div/form/div[3]/a/span")
+	@FindBy(xpath = "//button[contains(text(),'Đăng nhập')]/ancestor::span")
 	WebElementFacade linkTextLogin;
 
 	public void clickOnLinkTextLogin() {
 		linkTextLogin.click();
 	}
 
-	@FindBy(xpath = "//button[@class='btn btn-xs btn-danger'][contains(.,'Đăng nhập')]")
+	@FindBy(xpath = "//button[contains(text(),'Đăng nhập')]")
 	WebElementFacade Loginbt;
 
 	public void clickOnLoginButton() {
 		Loginbt.click();
 	}
 	
-	@FindBy(xpath = "//p[@class='message-error ng-binding ng-scope'][contains(.,'Mã thẻ không được để trống.')]")
-	WebElementFacade messageErrorEmpty;
-	public String getMessageErrorEmpty() {
-		return messageErrorEmpty.getText();
-	}
-	@FindBy(xpath = "//p[@class='message-error ng-binding ng-scope'][contains(.,'Sai mã thẻ')]")
-	WebElementFacade messageErrorWrongKey;
-	public void getMessageErrorWrongKey() {		
-		messageErrorWrongKey.getText();
-	}
+	@FindBy(xpath = "////p[@class='message-error ng-binding ng-scope']")
+	WebElementFacade messageError;
+	public String getMessageError() {
+		return messageError.waitUntilVisible().getText();
+	}	
 }

@@ -1,23 +1,22 @@
 package vn.edu.elight.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
 import vn.edu.elight.pages.CodeCoursePage;
 
-public class CodeCourseSteps extends ScenarioSteps {
+public class CodeCourseSteps {
 	
 	CodeCoursePage onCodeCoursePage;
 
 	@Step
-	public void activeCode(String code) {
+	public void writeCode(String code) {
 		onCodeCoursePage.enterCode(code);
 	}
 	@Step
-	public void activeWithWEmptyCode() {
+	public void clearCode() {
 		onCodeCoursePage.clearFieldCode();
 	}
 	@Step
-	public void clickOnActiveCodeBt()
+	public void clickOnActiveCode()
 	{
 		onCodeCoursePage.clickOnActiveCodeButton();
 	}

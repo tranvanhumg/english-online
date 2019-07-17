@@ -30,7 +30,7 @@ public class ForgetPasswordPage extends PageObject {
 		linkTextBackLoginPage.click();
 	}
 	
-	@FindBy(xpath = "//h4[@class='message-error ng-binding'][contains(.,'Email không đúng. Vui lòng nhập email bạn đăng ký tài khoản')]")
+	@FindBy(xpath = "//h4[@class='message-error ng-binding']")
 	WebElementFacade messageErrorEmail;
 	public void getMessageErrorEmail() {
 		messageErrorEmail.getText();
