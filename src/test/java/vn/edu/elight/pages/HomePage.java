@@ -7,6 +7,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 public class HomePage extends PageObject{
 	
 	@FindBy(xpath = "//span[text()='ĐĂNG NHẬP']")
+	///html/body/div[1]/div[1]/div[1]/a/span
 	WebElementFacade Loginbt;
 	
 	public void clickOnLoginButton() {
