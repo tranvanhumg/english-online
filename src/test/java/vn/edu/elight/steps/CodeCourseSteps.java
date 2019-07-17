@@ -8,7 +8,7 @@ public class CodeCourseSteps {
 	CodeCoursePage onCodeCoursePage;
 
 	@Step
-	public void writeCode(String code) {
+	public void activeCode(String code) {
 		onCodeCoursePage.enterCode(code);
 	}
 	@Step
@@ -19,5 +19,15 @@ public class CodeCourseSteps {
 	public void clickOnActiveCode()
 	{
 		onCodeCoursePage.clickOnActiveCodeButton();
+	}
+	@Step
+	public void clickOnLinkTextLogin()
+	{
+		onCodeCoursePage.clickOnLinkTextLogin();
+	}
+	@Step
+	public void clickOnBtLogin()
+	{
+		onCodeCoursePage.clickOnLoginButton();;
 	}
 }
