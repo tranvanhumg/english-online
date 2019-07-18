@@ -15,17 +15,17 @@ public class AuthenFBPage extends PageObject{
 	}
 	
 	WebElementFacade pass;
-	public void enterPassWord(String pwd)
+	public void enterPassword(String pwd)
 	{
 		pass.sendKeys(pwd);
 	}
-	public void clearPassWord() {
+	public void clearPassword() {
 		pass.clear();
 	}
 	
 	WebElementFacade loginbutton;
 	public void clickOnLoginBt() {
-		loginbutton.click();
+		loginbutton.waitUntilClickable().click();
 	}
 	
 	@FindBy(xpath = "//a[@id='forgot-password-link']")

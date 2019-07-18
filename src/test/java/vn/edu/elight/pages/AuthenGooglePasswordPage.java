@@ -20,14 +20,14 @@ public class AuthenGooglePasswordPage extends PageObject {
 	@FindBy(xpath = "//span[@class='wRNPwe S7pdP']")
 	WebElementFacade showPasswordBt;
 	public void clickOnShowPasswordBt() {
-		showPasswordBt.click();
+		showPasswordBt.waitUntilClickable().click();
 	}
 	
 	//hide pass
 	@FindBy(xpath = "//span[@class='wRNPwe pVlEsd']")
 	WebElementFacade hidePasswordBt;
 	public void clickOnHidePasswordBt() {
-		hidePasswordBt.click();
+		hidePasswordBt.waitUntilClickable().click();
 	}
 	
 	@FindBy(xpath = "//div[@jsname='bCkDte']/span[@class='CwaK9']/span[@class='RveJvd snByac']")

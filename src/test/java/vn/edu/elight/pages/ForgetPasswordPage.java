@@ -21,7 +21,7 @@ public class ForgetPasswordPage extends PageObject {
 	@FindBy(xpath = "//button[@ng-click='forgetAccount(data);']")
 	WebElementFacade sendBt;
 	public void clickOnSendBt() {
-		sendBt.click();
+		sendBt.waitUntilEnabled().click();
 	}
 	
 	@FindBy(className = "return-login-page")
