@@ -1,4 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Search by keyword story","Searching by keyword banana should display the corresponding article","ERROR","2019-07-12T16:58:06.84+07:00[Asia/Bangkok]","0.0","1.87"
-"Search by keyword story","Searching by ambiguious keyword should display the disambiguation page","PENDING","2019-07-12T16:58:09.759+07:00[Asia/Bangkok]","0.0","0.32"
-"Search by keyword story","Searching by keyword apple should display the corresponding article","ERROR","2019-07-12T16:58:10.087+07:00[Asia/Bangkok]","0.0","0.53"
+"Login test","Login with FB ac","ERROR","2019-07-19T08:16:11.962+07:00[Asia/Bangkok]","0.0","47.18"
+"Login test","Login with FB ac emty","ERROR","2019-07-19T08:17:00.007+07:00[Asia/Bangkok]","0.0","45.45"

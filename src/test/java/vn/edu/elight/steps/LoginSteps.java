@@ -7,6 +7,10 @@ public class LoginSteps {
 	LoginPage onLoginPage;
 
 	@Step
+	public void openLoginPage() {
+		onLoginPage.open();
+	}
+	@Step
 	public void login(String email, String pwd) {
 		onLoginPage.enterEmailField(email);
 		onLoginPage.enterPassword(pwd);
