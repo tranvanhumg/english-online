@@ -93,7 +93,7 @@ public class LoginPage extends PageObject {
 	}
 
 	// Phải điền đầy đủ thông tin trước khi đăng nhập.
-	//Đây là tài khoản Facebook của bạn. Vui lòng click đăng nhập bằng Facebook!    
+	// Đây là tài khoản Facebook của bạn. Vui lòng click đăng nhập bằng Facebook!
 	@FindBy(xpath = "//div[@class='message-error ng-binding ng-scope']")
 	WebElementFacade messageErrorScopePassword;
 
@@ -101,5 +101,15 @@ public class LoginPage extends PageObject {
 		return messageErrorScopePassword.waitUntilVisible().getText();
 	}
 
+	//Cach multi chose doi voi the input
+	public void selectFields(String... fields) {
+
+		$("//input[@type='search']").click();
+		for (String field : fields) {
+
+			$("//input[@type='search']").typeAndEnter(field);
+
+		}
+	}
 
 }
